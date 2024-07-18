@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row mt-5">
+        {{#if empleados}}
+       
+        <div class="div">
+            <div class="col md-3">
+                <H3 style="text-align: center;">LISTADO DE EMPLEADOS</H3>
+                <a href="/add"><button  type="button" class="btn btn-primary" >
+                Nuevo Empleado
+                </button></a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Telefono</th>
+                         <th scope="col">Edad</th>
+                         <th scope="col">opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each empleados}}
+                            <tr>
+                           
+                                <td>{{id}}</td>
+                                <td>{{name}}</td>
+                                <td>{{lastname}}</td>
+                                <td>{{phone}}</td>
+                                <td>{{ege}}</td>
+                                <td>
+                                    <div>
+                                        <a href=""  class="btn btn-warning">Editar</a>
+                                        <a href=""  class="btn btn-danger">Eliminar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                       {{/each}}
+                       
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+        
+        {{else}}
+
+            <h3 style="text-align: center;">No hay empleados en el sistema...</H3>
+
+          {{/if}}
+    </div>
+</div>
