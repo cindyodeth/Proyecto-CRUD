@@ -1,13 +1,57 @@
 <div class="container">
     <div class="row mt-5">
-        {{#if empleados}}
-       
         <div class="div">
             <div class="col md-3">
                 <H3 style="text-align: center;">LISTADO DE EMPLEADOS</H3>
-                <a href="/add"><button  type="button" class="btn btn-primary" >
-                Nuevo Empleado
-                </button></a>
+    
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                NUEVO EMPLEADO
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nuevo Empleado</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                       <div class="">
+                        <div class="row mt-10">
+                            <div class="col-md-12">
+                            <div class="card-body">
+                                <form action="/add" method="post" style="max-width: 500px; margin: 0 auto;">
+                                    <div class="mb-3">
+                                        <label for="nombres" class="form-label">Nombres</label>
+                                        <input type="text" class="form-control" id="nombres" name="name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="apellidos" class="form-label">Apellidos</label>
+                                        <input type="text" class="form-control" id="apellidos" name="lastname">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telefono" class="form-label">Teléfono</label>
+                                        <input type="text" class="form-control" id="telefono" name="phone">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edad" class="form-label">Edad</label>
+                                        <input type="text" class="form-control" id="edad" name="ege">
+                                    </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -30,8 +74,8 @@
                                 <td>{{ege}}</td>
                                 <td>
                                     <div>
-                                        <a href=""  class="btn btn-warning">Editar</a>
-                                        <a href=""  class="btn btn-danger">Eliminar</a>
+                                        <a href="/edit/{{id}}" data-bs-target="#exampleModal"  class="btn btn-warning">Editar</a>
+                                        <a href="/delete/{{id}}"  class="btn btn-danger">Eliminar</a>
                                     </div>
                                 </td>
                             </tr>
@@ -42,11 +86,6 @@
                 </table>
             </div>
         </div>
-        
-        {{else}}
 
-            <h3 style="text-align: center;">No hay empleados en el sistema...</H3>
-
-          {{/if}}
     </div>
 </div>

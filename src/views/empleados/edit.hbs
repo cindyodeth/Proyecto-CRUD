@@ -1,24 +1,24 @@
 <div class="container">
   <div class="row mt-5">
-    <div class="col-md-3">
-      <h3 style="text-align: center;">NUEVO EMPLEADO</h3>
+    <div class="col-md-12">
+      <h3 style="text-align: center;">EDITAR EMPLEADO</h3>
       <div class="card-body">
-        <form action="/add" method="post" style="max-width: 500px; margin: 0 auto;">
+        <form action="/edit/{{empleado.id}}" method="post" style="max-width: 500px; margin: 0 auto;">
           <div class="mb-3">
             <label for="nombres" class="form-label">Nombres</label>
-            <input type="text" class="form-control" id="nombres" name="name">
+            <input type="text" class="form-control" value="{{empleado.name}}" id="nombres" name="name">
           </div>
           <div class="mb-3">
             <label for="apellidos" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="apellidos" name="lastname">
+            <input type="text" class="form-control" value="{{empleado.lastname}}" id="apellidos" name="lastname">
           </div>
           <div class="mb-3">
             <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" id="telefono" name="phone">
+            <input type="text" class="form-control" value="{{empleado.phone}}" id="telefono" name="phone">
           </div>
           <div class="mb-3">
             <label for="edad" class="form-label">Edad</label>
-            <input type="text" class="form-control" id="edad" name="ege">
+            <input type="text" class="form-control" value="{{empleado.ege}}" id="edad" name="ege">
           </div>
           <div class="text-center mb-4">
             <button type="submit" class="btn btn-primary btn-block">Guardar</button>
